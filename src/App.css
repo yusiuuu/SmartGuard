@@ -1,0 +1,340 @@
+/* src/App.css */
+
+/* Reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and root styling with theme support */
+body, html, #root {
+  height: 100%;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+}
+
+body.dark {
+  background-color: #1a202c; /* Very dark gray for deep dark mode */
+  color: #e2e8f0; /* Light gray text */
+}
+
+body.light {
+  background-color: #f5f7fa; /* Light gray-blue */
+  color: #333; /* Dark gray text */
+}
+
+/* Sidebar styling */
+aside {
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+body.dark aside {
+  background-color: #1a202c; /* Matches main dark background for consistency */
+  color: #e2e8f0;
+}
+
+body.light aside {
+  background-color: #f0f4f8; /* Light blue-gray */
+  color: #333;
+}
+
+aside h2 {
+  transition: color 0.3s ease;
+}
+
+body.dark aside h2 {
+  color: #63b3ed; /* Light blue for dark mode */
+}
+
+body.light aside h2 {
+  color: #2c3e50; /* Dark blue */
+}
+
+aside button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark aside button:hover, body.dark aside button.bg-gray-700 {
+  background-color: #2d3748; /* Darker gray for hover in dark mode */
+  color: #e2e8f0;
+}
+
+body.light aside button:hover, body.light aside button.bg-blue-200 {
+  background-color: #e6eef9; /* Lighter blue */
+  color: #2c3e50;
+}
+
+/* Navbar styling */
+nav {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+body.dark nav {
+  background-color: #2d3748; /* Dark gray */
+  border-color: #4a5568; /* Darker gray */
+}
+
+body.light nav {
+  background-color: #f0f4f8; /* Light blue-gray */
+  border-color: #e0e6ed; /* Light gray */
+}
+
+nav h1, nav input, nav button {
+  transition: color 0.3s ease;
+}
+
+body.dark nav h1 {
+  color: #63b3ed; /* Light blue */
+}
+
+body.light nav h1 {
+  color: #2c3e50; /* Dark blue */
+}
+
+nav input {
+  border: 1px solid;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark nav input {
+  background-color: #4a5568; /* Darker gray */
+  border-color: #718096; /* Medium gray */
+  color: #e2e8f0;
+}
+
+body.light nav input {
+  background-color: #fff;
+  border-color: #e0e6ed; /* Light gray */
+  color: #333;
+}
+
+nav button {
+  transition: background-color 0.3s ease;
+}
+
+body.dark nav button {
+  background-color: #4299e1; /* Darker blue */
+}
+
+body.dark nav button:hover {
+  background-color: #3182ce; /* Even darker blue */
+}
+
+body.light nav button {
+  background-color: #3498db; /* Blue */
+}
+
+body.light nav button:hover {
+  background-color: #2980b9; /* Darker blue */
+}
+
+/* Main content */
+main {
+  overflow-y: auto;
+  background-color: transparent; /* Use body background for consistency */
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+/* Widgets and panels */
+.bg-white, .bg-gray-800 {
+  background-color: transparent; /* Use body background for consistency */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.bg-white:hover, .bg-gray-800:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Gauge and chart styling */
+.recharts-wrapper {
+  border-radius: 8px;
+}
+
+body.dark .recharts-text {
+  fill: #FFFFFF !important; /* White text for dark mode */
+}
+
+body.light .recharts-text {
+  fill: #000000 !important; /* Black text for light mode */
+}
+
+body.dark .recharts-line, body.dark .recharts-bar {
+  stroke: #FFFFFF; /* White lines/bars in dark mode */
+}
+
+body.light .recharts-line, body.light .recharts-bar {
+  stroke: #000000; /* Black lines/bars in light mode */
+}
+
+.recharts-line {
+  stroke-width: 2; /* Thinner lines to prevent overlap */
+}
+
+.recharts-bar {
+  stroke-width: 1; /* Thinner bars to prevent overlap */
+}
+
+.recharts-legend-item {
+  margin-right: 20px; /* Space out legend items */
+}
+
+/* Specific chart adjustments for professional alignment */
+.recharts-cartesian-grid-line.light {
+  stroke: #ccc !important; /* Light mode grid lines */
+}
+
+.recharts-cartesian-grid-line.dark {
+  stroke: #555 !important; /* Dark mode grid lines */
+}
+
+/* Alerts section */
+.alerts-section, .fixed {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+body.dark .alerts-section, body.dark .fixed {
+  background-color: #2d3748; /* Dark gray */
+}
+
+body.light .alerts-section, body.light .fixed {
+  background-color: #fef2f2; /* Light red for warnings */
+}
+
+.alerts-section:hover, .fixed:hover {
+  transform: translateY(-2px);
+}
+
+.alerts-section ul li {
+  transition: background-color 0.3s ease;
+}
+
+body.dark .alerts-section ul li {
+  background-color: #4a5568; /* Darker gray for alerts in dark mode */
+  color: #feb2b2; /* Light red text in dark mode */
+}
+
+body.light .alerts-section ul li {
+  background-color: #fee2e2; /* Red-100 for alerts in light mode */
+  color: #dc2626; /* Dark red text in light mode */
+}
+
+/* Control panel in sidebar */
+.operator-control {
+  transition: box-shadow 0.3s ease;
+}
+
+body.dark .operator-control {
+  background-color: #4a5568; /* Darker gray */
+}
+
+body.light .operator-control {
+  background-color: #f0f4f8; /* Light blue-gray */
+}
+
+.operator-control:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+body.dark button {
+  color: #e2e8f0;
+}
+
+body.light button {
+  color: #ffffff;
+}
+
+body.dark button:hover {
+  transform: translateY(-2px);
+}
+
+body.light button:hover {
+  transform: translateY(-2px);
+}
+
+/* Reports and settings panels */
+.reports-section, .settings-section {
+  transition: opacity 0.3s ease;
+}
+
+body.dark .reports-section, body.dark .settings-section {
+  background-color: #2d3748; /* Dark gray */
+}
+
+body.light .reports-section, body.light .settings-section {
+  background-color: #ffffff; /* White */
+}
+
+.reports-section:hover, .settings-section:hover {
+  opacity: 0.9;
+}
+
+input {
+  border: 1px solid;
+  border-radius: 4px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark input {
+  background-color: #4a5568; /* Darker gray */
+  border-color: #718096; /* Medium gray */
+  color: #e2e8f0;
+}
+
+body.light input {
+  background-color: #fff;
+  border-color: #e0e6ed; /* Light gray */
+  color: #333;
+}
+
+input:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  aside {
+    width: 60px; /* Collapsed sidebar on tablet */
+  }
+
+  main {
+    grid-template-columns: 1fr; /* Single column on tablet */
+  }
+
+  .fixed {
+    position: static; /* Move fixed elements to normal flow on mobile */
+    margin: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  aside {
+    width: 0; /* Hidden sidebar on mobile, toggle via button if needed */
+    visibility: hidden;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .metrics, .grid {
+    grid-template-columns: 1fr; /* Stack everything on mobile */
+  }
+}

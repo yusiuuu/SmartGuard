@@ -1,0 +1,51 @@
+{
+  "name": "smartguard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "chart.js": "^4.4.1",
+    "express": "^4.21.2",
+    "mqtt": "^5.10.3",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "^18.2.0",
+    "react-gauge-chart": "^0.5.1",
+    "react-icons": "^5.5.0",
+    "react-scripts": "^5.0.1",
+    "recharts": "^2.15.1",
+    "styled-components": "^6.1.15",
+    "web-vitals": "^4.2.4",
+    "webpack": "^5.98.0",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "server": "node server.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
